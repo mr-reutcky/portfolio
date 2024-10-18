@@ -1,10 +1,5 @@
 @charset "utf-8";
 
-body {
-  font-family: 'Nunito Sans', Arial, Helvetica, sans-serif;
-  background-color: #F6F5F5;
-}
-
 .container {
   width: min(100% - 32px, 1200px);
   margin-inline: auto;
@@ -18,20 +13,12 @@ body {
   justify-content: space-between;
 }
 
-.flex-wrap {
-  flex-wrap: wrap;
-}
-
 .column {
   flex-direction: column;
 }
 
 .gap-20 {
   gap: 20px;
-}
-
-.gap-30 {
-  gap: 30px;
 }
 
 header {
@@ -44,15 +31,19 @@ header {
   align-items: center;
   line-height: 65px;
 
-  h1 {
-    a{
-      font-size: 2.5rem;
-      font-weight: 400;
-      color: #fff;
-      text-decoration: none;
+  .title {
+    line-height: 65px;
+    h1 {
+      height: 65px;
+      a{
+        font-size: 2.5rem;
+        font-weight: 400;
+        color: #fff;
+        text-decoration: none;
+      }
     }
   }
-
+  
   nav {
     ul {
       li {
@@ -76,10 +67,12 @@ header {
           left: 0;
           transition: width 0.25s ease-in-out;
         }
-
+        
         a:hover::after {
           width: 100%;
         }
+
+        
       }
 
       li + li {
@@ -127,68 +120,61 @@ header {
 }
 
 .hero-banner-text {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0 20px;
-  width: 50%; 
+  width: 500px;
 
-  h2, p {
-    width: 100%; 
+  h2, p{
+    width: 500px;
     color: #fff;
   }
-}
 
-h2 {
-  font-size: 3.5rem;
-}
+  h2 {
+    font-size: 3.5rem;
+  }
 
-p {
-  font-size: 1.6rem;
-}
+  p {
+    font-size: 1.6rem;
+  }
 
-.resume, .lets-connect {
-  margin-top: 40px;
-  text-transform: uppercase;
-  text-decoration: none;
-  width: fit-content;
-  border-radius: 5px;
-  font-size: 1.7rem;
-  font-weight: 900;
-  text-align: center;
-  transition: all 0.25s ease-in-out;
-}
+  .resume, .lets-connect {
+    margin-top: 40px;
+    text-transform: uppercase;
+    text-decoration: none;
+    width: fit-content;
+    border-radius: 5px;
+    font-size: 1.7rem;
+    font-weight: 900;
+    text-align: center;
+    transition: all 0.25s ease-in-out;
+  }
 
-.resume:hover, .lets-connect:hover {
-  scale: 1.01;
-}
+  .resume:hover, .lets-connect:hover {
+    scale: 1.01;
+  }
 
-.resume {
-  color: #fff;
-  border: 3px solid #fff;
-  padding: 8px 15px;
-}
+  .resume {
+    color: #fff;
+    border: 3px solid #fff;
+    padding: 8px 15px;
+  }
 
-.resume:hover {
-  border-color: rgb(255 255 255 / 75%);
-  color: rgb(255 255 255 / 75%);
-}
+  .resume:hover {
+    border-color: rgb(255 255 255 / 75%);
+    color: rgb(255 255 255 / 75%);
+  }
 
-.lets-connect {
-  background-color: #fff;
-  color: rgb(0 0 0 / 75%);
-  mix-blend-mode: screen;
-  padding: 11.5px 15px 0 15px;
-}
+  .lets-connect  {
+    background-color: #fff;
+    mix-blend-mode: screen;
+    padding: 10px 15px 6px 15px;
+  }
 
-.lets-connect:hover {
-  background-color: rgb(255 255 255 / 75%);
+  .lets-connect:hover {
+    background-color: rgb(255 255 255 / 75%);
+  }
 }
 
 h3 {
   margin-top: 80px;
-  font-size: 3rem;
-  text-decoration: underline 4px #4A249D;
 }
 
 .col {
@@ -197,105 +183,10 @@ h3 {
 
 .cols {
   width: calc(25% - 15px);
-  background-color: #fff;
-  border-radius: 5px;
-  padding: 15px;
-  box-shadow: 1px 1px 2px rgb(0 0 0 / 5%);
 }
 
-.projects {
-  width: calc(33.333333% - 13.333333px);
-  background-color: #fff;
-  border-radius: 5px;
-  padding: 15px 15px 75px 15px;
-  box-shadow: 1px 1px 2px rgb(0 0 0 / 5%);
-  position: relative;
+@media (max-width: 650px) {
 
-  p {
-    margin-top: 15px;
-  }
-}
-
-h4 {
-  margin-bottom: 20px;
-  font-size: 2rem;
-  text-decoration: underline 2px #009FBD;
-}
-
-img {
-  border-radius: 5px;
-}
-
-.projects-button {
-  background-color: #4A249D;
-  color: #fff;
-  border-radius: 5px;
-  box-shadow: 1px 1px 2px rgb(0 0 0 / 5%);
-  text-decoration: none;
-  font-size: 1.6rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  padding: 8px 16px;
-  margin-top: 20px;
-  position: absolute;
-  inset: auto 15px 15px auto;
-  transition: all 0.25s ease-in-out;
-}
-
-.projects-button:hover {
-  scale: 1.01;
-  background-color: #5b3aa3;
-}
-
-footer {
-  margin-top: 80px;
-  background-color: #fff;
-  height: 60px;
-  line-height: 60px;
-
-  a {
-    font-size: 3rem;
-    color: #000;
-    transition: all 0.25s ease-in-out;
-  }
-
-  a:hover {
-    color: #1f1f1f;
-    scale: 1.01;
-  }
-}
-
-
-@media screen and (max-width: 900px) {
-  .hero-banner-text {
-    width: 100%;
-    h2 {
-      font-size: 2.5rem;
-    }
-
-    p {
-      font-size: 1.8rem;
-    }
-  }
-
-  .hero-banner-text .resume, .hero-banner-text .lets-connect {
-    font-size: 1.6rem;
-  }
-
-  .flex {
-    flex-wrap: wrap;
-  }
-
-  .cols {
-    width: calc(50% - 10px);
-  }
-
-  .projects {
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 650px) {
   nav ul {
     display: none;
     flex-direction: column;
@@ -322,27 +213,14 @@ footer {
   }
 
   .hero-banner-text {
-    max-width: 100%;
-    padding: 0 20px;
-  }
-
-  h2 {
-    font-size: 2.2rem;
-  }
-
-  p {
-    font-size: 1.2rem;
-  }
-
-  .cols {
-    width: 100%;
-  }
-
-  .projects {
-    width: 100%;
-  }
-
-  .hero-banner-text .resume, .hero-banner-text .lets-connect {
-    font-size: 1.4rem;
+    max-width: 450px;
+  
+    h2 {
+      font-size: 2.2rem;
+    }
+  
+    p {
+      font-size: 1.2rem;
+    }
   }
 }
