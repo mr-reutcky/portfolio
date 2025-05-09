@@ -2,7 +2,7 @@
 
 body {
   font-family: 'Nunito Sans', Arial, Helvetica, sans-serif;
-  background-color: #F6F5F5;
+  background-color: #f6f5f5;
 }
 
 .container {
@@ -22,6 +22,14 @@ body {
   flex-wrap: wrap;
 }
 
+.flex-center {
+  align-items: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
 .column {
   flex-direction: column;
 }
@@ -32,6 +40,10 @@ body {
 
 .gap-30 {
   gap: 30px;
+}
+
+.mt-20 {
+  margin-top: 20px;
 }
 
 .header-wrapper {
@@ -79,7 +91,7 @@ body {
           transition: color 0.3s;
 
           &:hover {
-            color: #78C5EF;
+            color: #78c5ef;
           }
         }
       }
@@ -87,14 +99,11 @@ body {
   }
 }
 
-
-
 .hero-banner {
   height: 100svh;
-  width: 100svw;
   background-image: url('../img/gradient.jpg');
   background-size: cover;
-  
+
   .hero-banner-content {
     display: flex;
     flex-direction: column;
@@ -117,7 +126,7 @@ body {
     }
 
     .btn {
-      background-color: #51A0D5;
+      background-color: #51a0d5;
       color: #fff;
       padding: 10px 20px;
       border-radius: 5px;
@@ -127,45 +136,68 @@ body {
 
       &:hover {
         scale: 1.01;
-        background-color: #78C5EF;
+        background-color: #78c5ef;
       }
     }
   }
 }
 
 .about {
-  margin-top: 20px;
+  margin: 50px 0 50px 0;
+
   .parent {
-      height: 600px;
-      width: 100svw;
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      grid-template-rows: repeat(5, 1fr);
-      gap: 8px;
+    height: 600px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 8px;
 
-      .about-me {
-        background-color: pink;
-        grid-column: span 2 / span 2;
-        grid-row: span 5 / span 5;
+    .about-me {
+      padding: 15px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+      grid-column: span 2 / span 2;
+      grid-row: span 5 / span 5;
+
+      .picture-me {
+        padding: 15px;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        background-image: url('../img/cedar-vally.png');
+        background-size: cover;
+        background-position: center;
       }
 
-      .my-skills {
-        background-color: green;
-        grid-column: span 3 / span 3;
-        grid-row: span 3 / span 3;
-        grid-column-start: 3;
+      p {
+        font-size: 1.8rem;
+        color: #1f242b;
+        margin-top: 20px;
       }
+    }
 
-      .my-projects {
-        background-color: brown;
-        grid-column: span 3 / span 3;
-        grid-row: span 2 / span 2;
-        grid-column-start: 3;
-        grid-row-start: 4;
-      }  
-  }  
+    .my-skills {
+      padding: 15px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+      grid-column: span 3 / span 3;
+      grid-row: span 3 / span 3;
+      grid-column-start: 3;
+    }
+
+    .my-projects {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+      grid-column: span 3 / span 3;
+      grid-row: span 2 / span 2;
+      grid-column-start: 3;
+      grid-row-start: 4;
+    }
+  }
 }
-
 
 /* Google chrome */
 @-webkit-keyframes svg-text-anim {
@@ -181,7 +213,6 @@ body {
     stroke-dashoffset: 0;
     fill: #ffffff;
   }
-  
 }
 /* Most browsers */
 @keyframes svg-text-anim {
