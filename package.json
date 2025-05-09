@@ -1,0 +1,14 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Welcome to my personal portfolio website! This site serves as a comprehensive showcase of my work in software development. Here, you can explore my background, skills, and the projects I've worked on.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run lite",
+    "lite" : "lite-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
