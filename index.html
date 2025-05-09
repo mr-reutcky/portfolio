@@ -10,230 +10,53 @@
     <link rel="icon" href="./src/img/favicon.svg" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/mrspecht/cdn/reset.css"
-      media="all"
-    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mrspecht/cdn/reset.css" media="all" />
     <link rel="stylesheet" href="./src/css/style.css" />
     <script src="./src/js/script.js" defer></script>
   </head>
   <body>
     <header>
-      <div class="container flex flex-between">
-        <h1><a href="#">Samuel Reutcky</a></h1>
+      <div class=" header-wrapper flex flex-between container">
+        <a href="index.html">
+          <h1>Samuel Reutcky</h1>
+        </a>
         <nav>
           <ul>
-            <li>
-              <a href="#about">About me</a>
-            </li>
-            <li>
-              <a href="#projects">My projects</a>
-            </li>
-
-            <li>
-              <a href="mailto:sreutcky@gmail.com">Contact me</a>
-            </li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
-        <div class="hamburger" id="hamburger">
-          <i class="fa-solid fa-bars"></i>
-        </div>
       </div>
     </header>
     <main>
       <div class="hero-banner">
-        <video loop muted autoplay preload="auto">
-          <source src="./src/img/background.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <div class="container hero-banner-text flex">
-          <div class="column">
-            <div>
-              <h2>
-                Hello, Canada! I'm a Software Developer Shaping the Future of
-                Code
-              </h2>
-            </div>
-            <div>
-              <p>
-                I'm a full stack software developer from Canada, dedicated to
-                building dynamic and efficient web applications. Let's create
-                something amazing together!
-              </p>
-            </div>
-            <div class="flex gap-20">
-              <a
-                href="./src/img/samuel-reutcky-resume.pdf"
-                target="_blank"
-                class="resume"
-              >Grab my resume</a>
-              <a href="mailto: sreutcky@gmail.com" class="lets-connect">
-                Send a message!
-              </a>
-            </div>
-          </div>
+        <div class="hero-banner-content">
+          <h2>Hi, I'm Samuel</h2  >
+          <p>Software Development Student & Aspiring Full-Stack Developer</p>
+          <a href="#projects" class="btn">View Projects</a>
         </div>
       </div>
-      <div id="about"></div>
-      <section class="container">
-        <h3>About Me</h3>
-        <div class="flex col flex-between flex-wrap gap-20">
-          <div class="cols">
-            <h4>Where I'm From</h4>
-            <p>
-              I grew up in Lockport, Manitoba, before moving to Winnipeg when I
-              was older. The move marked a turning point in my life, offering
-              new opportunities for growth and learning. In Winnipeg, I pursued
-              my education and began focusing more on my passion for software
-              development, embracing the challenges and experiences the city had
-              to offer.
-            </p>
-          </div>
-          <div class="cols">
-            <h4>Languages I Know</h4>
-            <p>
-              I have a solid foundation in web development, with expertise in
-              HTML, CSS, and JavaScript to create dynamic, user-friendly
-              websites. I'm also proficient in React, allowing me to build
-              modern, responsive web applications. Additionally, my experience
-              with C# gives me the ability to work on backend development and
-              software projects, making me a well-rounded developer ready to
-              tackle a range of challenges.
-            </p>
-          </div>
-          <div class="cols">
-            <h4>Skills</h4>
-            <p>
-              My greatest strengths are being a lifelong learner and a dedicated
-              hard worker. I thrive on challenges, always looking for
-              opportunities to push my skills and grow. Whether it's mastering a
-              new technology or solving complex problems, I'm driven by the
-              excitement of learning something new and overcoming obstacles
-              along the way.
-            </p>
-          </div>
-          <div class="cols">
-            <h4>Education</h4>
-            <p>
-              I graduated from Oak Park High School in June 2024 with cum laude
-              honors, and I have since completed my studies at MITT in software
-              development. My education has equipped me with a solid foundation
-              in programming, web development, and problem-solving, preparing me
-              to take on real-world challenges in the tech industry.
-            </p>
-          </div>
-        </div>
-      </section>
-      <div id="projects"></div>
-      <section class="container">
-        <h3>My Projects</h3>
-        <div class="flex col flex-between flex-wrap gap-20">
-          <div class="projects uni">
-            <h4>Cedar Valley University</h4>
-            <a
-              href="https://github.com/mr-reutcky/university-website"
-              target="_blank"
-              ><img
-                src="./src/img/cedar-vally.png"
-                alt="Picture of the home page of the Cedar Vally University website"
-            /></a>
-            <p>
-              I created the Cedar Valley University website as a project, and
-              it's a completely fictional university. The website showcases a
-              clean, professional layout designed to simulate a real academic
-              institution, featuring fake programs, campus life details, and
-              resources for students. This project helped me practice web
-              development skills like HTML, CSS, and JavaScript, allowing me to
-              build a fully functional, visually appealing site as part of my
-              software development studies.
-            </p>
-            <a
-              href="https://github.com/mr-reutcky/university-website"
-              target="_blank"
-              class="projects-button"
-              >Open Now</a
-            >
-          </div>
-          <div class="projects">
-            <h4>Client Detection</h4>
-            <a
-              href="https://github.com/mr-reutcky/client-detection"
-              target="_blank"
-              ><img
-                src="./src/img/client-detection.png"
-                alt="Dashboard I made While learning how to effictivle use BOM"
-            /></a>
-            <p>
-              The "Client Detection" website I created demonstrates how to
-              gather and display information about a user's system. It uses
-              JavaScript to detect details like the operating system, browser,
-              screen dimensions, battery level, and network status. This project
-              helped me practice using JavaScript to interact with a user's
-              environment and provide real-time data. It's a functional tool
-              that showcases my skills in web development and client-side
-              scripting.
-            </p>
-            <a
-              href="https://github.com/mr-reutcky/client-detection"
-              target="_blank"
-              class="projects-button"
-              >Open Now</a
-            >
-          </div>
-          <div class="projects">
-            <h4>Temperature Converter</h4>
-            <a
-              href="https://github.com/mr-reutcky/temperature-converter"
-              target="_blank"
-              ><img
-                src="./src/img/temp-converter.png"
-                alt="Temperature converter I have made with a functional dark mode"
-            /></a>
-            <p>
-              The "Temperature Converter" website I built allows users to
-              convert temperatures between Celsius and Fahrenheit. It features a
-              simple, user-friendly interface and includes a dark mode option
-              for better accessibility. This project helped me practice HTML,
-              CSS, and JavaScript to create a functional tool that showcases my
-              web development abilities.
-            </p>
-            <a
-              href="https://github.com/mr-reutcky/temperature-converter"
-              target="_blank"
-              class="projects-button"
-              >Open Now</a
-            >
+
+      <section class="about" id="about">
+        <div class="container">
+          <div class="parent">
+              <div class="about-me">About Me</div>
+              <div class="my-skills">My Skills</div>
+              <div class="my-projects">My Projects</div>
           </div>
         </div>
       </section>
     </main>
     <footer>
-      <div class="container flex flex-between">
-        <p>2024 &copy; Samuel Reutcky</p>
-        <div class="flex gap-30">
-          <a href="https://github.com/mr-reutcky" target="_blank"
-            ><i class="fa-brands fa-github"></i
-          ></a>
-          <a href="www.linkedin.com/in/samuel-reutcky-05504b2ab" target="_blank"
-            ><i class="fa-brands fa-linkedin"></i
-          ></a>
-          <a href="mailto: sreutcky@gmail.com"
-            ><i class="fa-solid fa-envelope"></i
-          ></a>
-        </div>
-      </div>
+      <div class="footer-content">
+        <p>&copy; 2025 Samuel Reutcky. All rights reserved.</p>
+        <ul class="socials">
+          
+        </ul>
     </footer>
   </body>
 </html>
