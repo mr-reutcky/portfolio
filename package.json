@@ -8,7 +8,27 @@
     "start": "npm run lite",
     "lite" : "lite-server"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "portfolio",
+    "personal website",
+    "software developer",
+    "web developer",
+    "full-stack developer",
+    "front-end",
+    "back-end",
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "C#",
+    "ASP.NET",
+    "MVC",
+    "MITT",
+    "Samuel",
+    "developer portfolio",
+    "projects",
+    "programming",
+    "student developer"
+  ],
+  "author": "Samuel Reutcky",
   "license": "ISC"
 }
