@@ -1,0 +1,84 @@
+:root {
+  --bg: #0d0d10;
+  --text: #e8e8ea;
+  --muted: #a6a6ad;
+  --accent: #00ffd0;
+  --accent-2: #6ea8ff;
+}
+
+.footer {
+  position: relative;
+  background:
+    radial-gradient(900px 500px at 10% 0%, rgba(0,255,208,0.06), transparent 60%),
+    radial-gradient(800px 480px at 90% 10%, rgba(110,168,255,0.06), transparent 60%),
+    var(--bg);
+  color: var(--text);
+  padding: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  text-align: center;
+  overflow: hidden;
+}
+
+.footer__fade {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 100%;
+  height: 24px;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(13, 13, 13, 0.0) 0%,
+    rgba(13, 13, 13, 0.25) 40%,
+    rgba(13, 13, 13, 0.5) 100%
+  );
+}
+
+.footer__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.footer__copy {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+.footer__social {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer__social a {
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.footer__social a:hover {
+  color: var(--accent);
+}
+
+.footer__glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(700px 260px at 20% 100%, rgba(0,255,208,0.10), transparent 60%),
+    radial-gradient(540px 220px at 80% 100%, rgba(110,168,255,0.10), transparent 60%);
+}
+
+@media (max-width: 600px) {
+  .footer__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}

@@ -1,0 +1,107 @@
+:root {
+  --bg: #0d0d10;
+  --text: #e8e8ea;
+  --muted: #a6a6ad;
+  --accent: #00ffd0;
+  --accent-2: #6ea8ff;
+  --ring: rgba(0, 255, 208, 0.2);
+}
+
+.contact {
+  position: relative;
+  background:
+    radial-gradient(900px 500px at 10% 0%, rgba(0,255,208,0.06), transparent 60%),
+    radial-gradient(800px 480px at 90% 10%, rgba(110,168,255,0.06), transparent 60%),
+    var(--bg);
+  color: var(--text);
+  padding: clamp(3rem, 6vw, 5rem) 1.5rem clamp(4rem, 8vw, 6rem);
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.contact__fade {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 100%;
+  height: 24px;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(13, 13, 13, 0.0) 0%,
+    rgba(13, 13, 13, 0.25) 40%,
+    rgba(13, 13, 13, 0.5) 100%
+  );
+}
+
+.contact__inner {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact__title {
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  background: linear-gradient(90deg, #fff 0%, #cfd3ff 40%, #b7fff1 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.contact__subtitle {
+  color: var(--muted);
+  max-width: 50ch;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+.contact__info {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact__info p {
+  margin: 0.4rem 0;
+}
+
+.contact__info a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.contact__info a:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 1.1rem;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.btn--primary {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #0a0a0a;
+}
+
+.btn--primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 30px -12px var(--ring);
+}
+
+.contact__glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(700px 260px at 20% 100%, rgba(0,255,208,0.10), transparent 60%),
+    radial-gradient(540px 220px at 80% 100%, rgba(110,168,255,0.10), transparent 60%);
+}
