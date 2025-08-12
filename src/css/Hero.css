@@ -18,7 +18,7 @@
 
   /* add top padding so text isn't hidden under fixed header */
   padding: calc(var(--header-h) + clamp(2rem, 6vw, 4rem)) 1.5rem
-           clamp(3rem, 6vw, 6rem);
+            clamp(3rem, 6vw, 6rem);
 
   background:
     radial-gradient(1200px 600px at 20% -10%, rgba(0,255,208,0.08), transparent 60%),
@@ -45,7 +45,7 @@
 
 .hero__title {
   font-size: clamp(2rem, 5vw, 3.75rem);
-  line-height: 1.1;
+  line-height: 1.4;
   margin: 0 0 1rem;
   background: linear-gradient(90deg, #fff 0%, #cfd3ff 40%, #b7fff1 100%);
   -webkit-background-clip: text;
