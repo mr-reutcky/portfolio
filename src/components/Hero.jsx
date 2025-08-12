@@ -26,6 +26,9 @@ export default function Hero() {
         </div>
       </div>
       <div className="hero__glow" aria-hidden="true"></div>
+      <a href="#about" className="scroll-down" aria-label="Scroll down to About">
+        <span className="arrow">&#x25BC;</span>
+      </a>
     </section>
   );
 }

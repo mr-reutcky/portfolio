@@ -111,6 +111,53 @@
   z-index: -1;
 }
 
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+  60% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Bouncing arrow */
+.scroll-down {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-decoration: none;
+}
+
+.scroll-down .arrow {
+  display: inline-block;         /* <-- key fix */
+  font-size: 2rem;
+  line-height: 1;                /* avoid baseline wobble */
+  color: #fff;
+  cursor: pointer;
+  opacity: 0.7;
+
+  animation-name: bounce;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  animation-fill-mode: both;
+
+  will-change: transform;        /* smoothness hint */
+  transform: translateZ(0);      /* GPU nudge */
+}
+
+.scroll-down .arrow:hover { opacity: 1; }
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-8px); }
+  60% { transform: translateY(-4px); }
+}
+
 /* Small screens */
 @media (max-width: 640px) {
   .hero__actions { width: 100%; }
