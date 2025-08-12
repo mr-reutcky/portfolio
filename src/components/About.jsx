@@ -3,7 +3,7 @@ import "../css/About.css";
 
 export default function About() {
   return (
-    <section className="about" id="about" role="region" aria-label="About me">
+    <section className="about" id="about" aria-label="About me">
       {/* Top fade so it blends smoothly from the hero */}
       <div className="about__fade" aria-hidden="true"></div>
 

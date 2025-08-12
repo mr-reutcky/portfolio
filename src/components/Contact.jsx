@@ -3,7 +3,7 @@ import "../css/Contact.css";
 
 export default function Contact() {
   return (
-    <section className="contact" id="contact" role="region" aria-label="Contact">
+    <section className="contact" id="contact" aria-label="Contact">
       <div className="contact__fade" aria-hidden="true"></div>
 
       <div className="contact__inner">

@@ -52,7 +52,7 @@ export default function Projects({ items = DEFAULT_PROJECTS }) {
   }, [items, query]);
 
   return (
-    <section className="projects" id="projects" role="region" aria-label="Projects">
+    <section className="projects" id="projects" aria-label="Projects">
       <div className="projects__fade" aria-hidden="true"></div>
 
       <div className="projects__inner">

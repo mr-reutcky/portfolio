@@ -3,7 +3,7 @@ import "../css/Hero.css";
 
 export default function Hero() {
   return (
-    <section className="hero" id="home" role="region" aria-label="Intro">
+    <section className="hero" id="home" aria-label="Intro">
       <div className="hero__inner">
         <p className="hero__eyebrow">Hi, I’m Samuel — Web Developer</p>
         <h1 className="hero__title">
