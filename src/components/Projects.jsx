@@ -1,5 +1,14 @@
 import React, { useMemo, useState } from "react";
 import "../css/Projects.css";
+import WotKImage from "../images/wizards_of_the_keyboard.png";
+import LmsImage from "../images/library_managment_system.png";
+import LprImage from "../images/license_plate_recognition.jpg";
+import FakeStoreImage from "../images/ecommerce_store.png";
+import TodoImage from "../images/to_do.png";
+import TcImage from "../images/tip_calculator.png";
+import HmImage from "../images/hive_mind.png";
+import UwImage from "../images/university_website.png";
+
 
 const DEFAULT_PROJECTS = [
   {
@@ -7,7 +16,7 @@ const DEFAULT_PROJECTS = [
     blurb:
       "Mobile-first plate scanner with OpenCV.js and an Express API. Real‑time OCR, permit lookup, and a clean field UI.",
     tags: ["React", "OpenCV.js", "Express", "AWS Rekognition"],
-    image: "", // optional: "/img/lpr-cover.png"
+    image: LprImage,
     links: {
       live: "https://mr-reutcky.github.io/parking-enforcement-app/",
       repo: "https://github.com/mr-reutcky/parking-enforcement-app",
@@ -16,9 +25,9 @@ const DEFAULT_PROJECTS = [
   {
     title: "Library Management System",
     blurb:
-      "ASP.NET MVC app with role-based access (Librarian/User), inventory, and checkout/returns.",
-    tags: ["C#", "ASP.NET MVC", "SQL"],
-    image: "",
+      "ASP.NET MVC app with role-based access (Librarian/User), inventory, and checkout/returns. CRUD operations with EF Core.",
+    tags: ["C#", "ASP.NET MVC", "SQL", "Entity Framework Core"],
+    image: LmsImage,
     links: {
       live: "https://github.com/femo-dev/library-management-system",
       repo: "https://github.com/femo-dev/library-management-system",
@@ -29,10 +38,65 @@ const DEFAULT_PROJECTS = [
     blurb:
       "A fast-paced word game where players cast spells by typing words quickly and accurately with a leaderboard.",
     tags: ["JavaScript", "HTML5", "CSS", "Game Development"],
-    image: "", // optional: "/img/wizards-keyboard-cover.png"
+    image: WotKImage,
     links: {
-      live: "https://mr-reutcky.github.io/word-game/", // replace with live demo URL
-      repo: "https://github.com/mr-reutcky/word-game" // replace with repo link
+      live: "https://mr-reutcky.github.io/word-game/",
+      repo: "https://github.com/mr-reutcky/word-game"
+    }
+  },
+  {
+    title: "React Fake Store",
+    blurb:
+      "A modern eCommerce store built with React and the Fake Store API, featuring product browsing, category filtering and more.",
+    tags: ["React", "JavaScript", "CSS", "API Integration"],
+    image: FakeStoreImage,
+    links: {
+      live: "https://mr-reutcky.github.io/ecommerce-store/",
+      repo: "https://github.com/mr-reutcky/ecommerce-store"
+    }
+  },
+  {
+    title: "React To-Do App",
+    blurb:
+      "A task management app built with React, featuring create, update, complete, and delete functionality.",
+    tags: ["React", "JavaScript", "CSS", "State Management"],
+    image: TodoImage,
+    links: {
+      live: "https://mr-reutcky.github.io/to-do/",
+      repo: "https://github.com/mr-reutcky/to-do"
+    }
+  },
+  {
+    title: "Tip Calculator",
+    blurb:
+      "A simple and responsive tip calculator built with HTML, CSS, and JavaScript.",
+    tags: ["HTML", "CSS", "JavaScript"],
+    image: TcImage,
+    links: {
+      live: "https://mr-reutcky.github.io/tip-calculator/",
+      repo: "https://github.com/mr-reutcky/tip-calculator"
+    }
+  },
+  {
+    title: "Hive Mind (Vanilla JS)",
+    blurb:
+      "A LinkedIn-style networking UI with a hexagon theme, built in plain HTML, CSS, and JavaScript.",
+    tags: ["HTML", "CSS", "JavaScript", "LocalStorage"],
+    image: HmImage,
+    links: {
+      live: "https://mr-reutcky.github.io/hive-mind/home.html",
+      repo: "https://github.com/mr-reutcky/hive-mind"
+    }
+  },
+  {
+    title: "University Website",
+    blurb:
+      "A clean, responsive university website built using only HTML and CSS.",
+    tags: ["HTML", "CSS", "Responsive Design"],
+    image: UwImage,
+    links: {
+      live: "https://mr-reutcky.github.io/university-website/",
+      repo: "https://github.com/mr-reutcky/university-website"
     }
   },
 ];
