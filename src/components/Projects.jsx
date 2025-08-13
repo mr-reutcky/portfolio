@@ -1,5 +1,5 @@
-import { useMemo, useState } from "react";
-import { motion } from "framer-motion";
+import { useMemo, useState, useRef, useEffect } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
 import "../css/Projects.css";
 
 import WotKImage from "../images/wizards_of_the_keyboard.png";
@@ -123,26 +123,32 @@ export default function Projects({ items = DEFAULT_PROJECTS }) {
     );
   }, [items, query]);
 
-  // Alternate card animation directions for visual rhythm
-  const cardVariantFor = (i) => {
-    const mod = i % 3;
-    if (mod === 0) return fadeInUp;
-    if (mod === 1) return fadeInLeft;
-    return fadeInRight;
-  };
+  const cardVariantFor = (i) => (i % 3 === 0 ? fadeInUp : i % 3 === 1 ? fadeInLeft : fadeInRight);
+
+  const sectionRef = useRef(null);
+  const controls = useAnimation();
+  const inView = useInView(sectionRef, {
+    margin: "-65px 0px -20% 0px",
+    amount: 0.1,
+  });
+
+  useEffect(() => {
+    if (inView) controls.start("visible");
+  }, [inView, controls]);
 
   return (
-    <section className="projects" id="projects" aria-label="Projects">
+    <motion.section
+      ref={sectionRef}
+      className="projects"
+      id="projects"
+      aria-label="Projects"
+      variants={staggerContainer(0.16)}
+      initial="hidden"
+      animate={controls}
+    >
       <div className="projects__fade" aria-hidden="true"></div>
 
-      {/* Stagger header + grid as they enter viewport */}
-      <motion.div
-        className="projects__inner"
-        variants={staggerContainer(0.16)}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.25 }}
-      >
+      <motion.div className="projects__inner" variants={staggerContainer(0.16)}>
         <motion.header className="projects__header" variants={fadeInUp}>
           <h2 className="projects__title">Projects</h2>
           <div className="projects__controls" role="search">
@@ -157,11 +163,7 @@ export default function Projects({ items = DEFAULT_PROJECTS }) {
           </div>
         </motion.header>
 
-        {/* Grid fades in, individual cards animate with alternating directions */}
-        <motion.ul
-          className="projects__grid"
-          variants={staggerContainer(0.12)}
-        >
+        <motion.ul className="projects__grid" variants={staggerContainer(0.12)}>
           {filtered.map((p, i) => (
             <motion.li
               key={p.title + i}
@@ -177,7 +179,7 @@ export default function Projects({ items = DEFAULT_PROJECTS }) {
                     alt={`${p.title} cover`}
                     initial={{ opacity: 0, scale: 1.02 }}
                     whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true, amount: 0.4 }}
+                    viewport={{ once: true, amount: 0.3, margin: "-65px 0px -20% 0px" }}
                     transition={{ duration: 0.5, ease: "easeOut" }}
                   />
                 ) : (
@@ -201,24 +203,12 @@ export default function Projects({ items = DEFAULT_PROJECTS }) {
 
                 <div className="project-card__actions">
                   {p.links?.live && (
-                    <a
-                      className="btn btn--primary"
-                      href={p.links.live}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label={`Open live demo of ${p.title}`}
-                    >
+                    <a className="btn btn--primary" href={p.links.live} target="_blank" rel="noreferrer" aria-label={`Open live demo of ${p.title}`}>
                       Live
                     </a>
                   )}
                   {p.links?.repo && (
-                    <a
-                      className="btn btn--ghost"
-                      href={p.links.repo}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label={`Open repository of ${p.title}`}
-                    >
+                    <a className="btn btn--ghost" href={p.links.repo} target="_blank" rel="noreferrer" aria-label={`Open repository of ${p.title}`}>
                       Repo
                     </a>
                   )}
@@ -236,6 +226,6 @@ export default function Projects({ items = DEFAULT_PROJECTS }) {
       </motion.div>
 
       <div className="projects__glow" aria-hidden="true"></div>
-    </section>
+    </motion.section>
   );
 }

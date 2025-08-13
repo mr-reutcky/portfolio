@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import "../css/Hero.css";
 
-// If you saved the utils file I gave you:
 import {
   fadeInDown,
   fadeInUp,
@@ -17,10 +16,12 @@ export default function Hero() {
         className="hero__inner"
         variants={staggerContainer(0.15)}
         initial="hidden"
-        animate="visible"
-        // If you prefer scroll-triggered instead of on-load:
-        // whileInView="visible"
-        // viewport={{ once: true, amount: 0.6 }}
+        whileInView="visible"
+        viewport={{
+          once: true,          // play only the first time it enters
+          amount: 0.6,         // ~60% of the hero must be visible
+          margin: "-65px 0px -10% 0px" // offset for your fixed header & a bit of bottom slack
+        }}
       >
         <motion.p className="hero__eyebrow" variants={fadeInDown}>
           Hi, I’m Samuel — Web Developer
