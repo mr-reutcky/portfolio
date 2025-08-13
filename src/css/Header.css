@@ -1,7 +1,3 @@
-:root {
-  --header-h: 65px;
-}
-
 .header {
   position: fixed;
   inset: 0 auto auto 0;
