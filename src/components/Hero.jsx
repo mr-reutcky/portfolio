@@ -1,34 +1,78 @@
-import React from "react";
+import { motion } from "framer-motion";
 import "../css/Hero.css";
+
+// If you saved the utils file I gave you:
+import {
+  fadeInDown,
+  fadeInUp,
+  fadeInLeft,
+  fadeInRight,
+  staggerContainer
+} from "../utils/animations";
 
 export default function Hero() {
   return (
     <section className="hero" id="home" aria-label="Intro">
-      <div className="hero__inner">
-        <p className="hero__eyebrow">Hi, I’m Samuel — Web Developer</p>
-        <h1 className="hero__title">
+      <motion.div
+        className="hero__inner"
+        variants={staggerContainer(0.15)}
+        initial="hidden"
+        animate="visible"
+        // If you prefer scroll-triggered instead of on-load:
+        // whileInView="visible"
+        // viewport={{ once: true, amount: 0.6 }}
+      >
+        <motion.p className="hero__eyebrow" variants={fadeInDown}>
+          Hi, I’m Samuel — Web Developer
+        </motion.p>
+
+        <motion.h1 className="hero__title" variants={fadeInUp}>
           Building fast, accessible, and clean web experiences.
-        </h1>
-        <p className="hero__subtitle">
+        </motion.h1>
+
+        <motion.p className="hero__subtitle" variants={fadeInLeft}>
           I craft modern frontends with React and solid backends with C# / Node.
           Focused on performance, DX, and sleek UX.
-        </p>
+        </motion.p>
 
-        <div className="hero__actions">
+        <motion.div className="hero__actions" variants={fadeInRight}>
           <a className="btn btn--primary" href="#projects">View Projects</a>
           <a className="btn btn--ghost" href="#contact" aria-label="Contact Samuel">
             Contact
           </a>
-        </div>
+        </motion.div>
 
-        <div className="hero__meta">
+        <motion.div className="hero__meta" variants={fadeInUp}>
           <span>Available for freelance & hire</span>
-        </div>
-      </div>
-      <div className="hero__glow" aria-hidden="true"></div>
-      <a href="#about" className="scroll-down" aria-label="Scroll down to About">
-        <span className="arrow">&#x25BC;</span>
-      </a>
+        </motion.div>
+      </motion.div>
+
+      {/* Glow easing in */}
+      <motion.div
+        className="hero__glow"
+        aria-hidden="true"
+        initial={{ opacity: 0, y: 10, scale: 1.02 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+      />
+
+      {/* Scroll arrow with gentle float */}
+      <motion.a
+        href="#about"
+        className="scroll-down"
+        aria-label="Scroll down to About"
+        initial={{ opacity: 0, y: 6 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.7, ease: [0.2, 0.7, 0.2, 1] }}
+      >
+        <motion.span
+          className="arrow"
+          animate={{ y: [0, 6, 0] }}
+          transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+        >
+          &#x25BC;
+        </motion.span>
+      </motion.a>
     </section>
   );
 }

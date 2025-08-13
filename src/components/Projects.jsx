@@ -1,5 +1,7 @@
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
+import { motion } from "framer-motion";
 import "../css/Projects.css";
+
 import WotKImage from "../images/wizards_of_the_keyboard.png";
 import LmsImage from "../images/library_managment_system.png";
 import LprImage from "../images/license_plate_recognition.jpg";
@@ -9,6 +11,12 @@ import TcImage from "../images/tip_calculator.png";
 import HmImage from "../images/hive_mind.png";
 import UwImage from "../images/university_website.png";
 
+import {
+  fadeInUp,
+  fadeInLeft,
+  fadeInRight,
+  staggerContainer
+} from "../utils/animations";
 
 const DEFAULT_PROJECTS = [
   {
@@ -115,12 +123,27 @@ export default function Projects({ items = DEFAULT_PROJECTS }) {
     );
   }, [items, query]);
 
+  // Alternate card animation directions for visual rhythm
+  const cardVariantFor = (i) => {
+    const mod = i % 3;
+    if (mod === 0) return fadeInUp;
+    if (mod === 1) return fadeInLeft;
+    return fadeInRight;
+  };
+
   return (
     <section className="projects" id="projects" aria-label="Projects">
       <div className="projects__fade" aria-hidden="true"></div>
 
-      <div className="projects__inner">
-        <header className="projects__header">
+      {/* Stagger header + grid as they enter viewport */}
+      <motion.div
+        className="projects__inner"
+        variants={staggerContainer(0.16)}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.25 }}
+      >
+        <motion.header className="projects__header" variants={fadeInUp}>
           <h2 className="projects__title">Projects</h2>
           <div className="projects__controls" role="search">
             <input
@@ -132,14 +155,31 @@ export default function Projects({ items = DEFAULT_PROJECTS }) {
               aria-label="Search projects"
             />
           </div>
-        </header>
+        </motion.header>
 
-        <ul className="projects__grid">
+        {/* Grid fades in, individual cards animate with alternating directions */}
+        <motion.ul
+          className="projects__grid"
+          variants={staggerContainer(0.12)}
+        >
           {filtered.map((p, i) => (
-            <li key={p.title + i} className="project-card">
+            <motion.li
+              key={p.title + i}
+              className="project-card"
+              variants={cardVariantFor(i)}
+              whileHover={{ y: -2 }}
+              transition={{ type: "tween", duration: 0.2 }}
+            >
               <div className="project-card__media">
                 {p.image ? (
-                  <img src={p.image} alt={`${p.title} cover`} />
+                  <motion.img
+                    src={p.image}
+                    alt={`${p.title} cover`}
+                    initial={{ opacity: 0, scale: 1.02 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true, amount: 0.4 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                  />
                 ) : (
                   <div className="project-card__placeholder" aria-hidden="true">
                     <div className="project-card__rays"></div>
@@ -161,27 +201,39 @@ export default function Projects({ items = DEFAULT_PROJECTS }) {
 
                 <div className="project-card__actions">
                   {p.links?.live && (
-                    <a className="btn btn--primary" href={p.links.live} target="_blank" rel="noreferrer" aria-label={`Open live demo of ${p.title}`}>
+                    <a
+                      className="btn btn--primary"
+                      href={p.links.live}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`Open live demo of ${p.title}`}
+                    >
                       Live
                     </a>
                   )}
                   {p.links?.repo && (
-                    <a className="btn btn--ghost" href={p.links.repo} target="_blank" rel="noreferrer" aria-label={`Open repository of ${p.title}`}>
+                    <a
+                      className="btn btn--ghost"
+                      href={p.links.repo}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`Open repository of ${p.title}`}
+                    >
                       Repo
                     </a>
                   )}
                 </div>
               </div>
-            </li>
+            </motion.li>
           ))}
-        </ul>
+        </motion.ul>
 
         {filtered.length === 0 && (
-          <p className="projects__empty" role="status">
+          <motion.p className="projects__empty" role="status" variants={fadeInUp}>
             No results. Try a different keyword.
-          </p>
+          </motion.p>
         )}
-      </div>
+      </motion.div>
 
       <div className="projects__glow" aria-hidden="true"></div>
     </section>

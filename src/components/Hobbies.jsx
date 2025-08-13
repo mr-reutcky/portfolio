@@ -1,5 +1,13 @@
 import React from "react";
+import { motion } from "framer-motion";
 import "../css/Hobbies.css";
+
+import {
+  fadeInUp,
+  fadeInLeft,
+  fadeInRight,
+  staggerContainer,
+} from "../utils/animations";
 
 const DEFAULT_HOBBIES = [
   {
@@ -111,31 +119,58 @@ function Icon({ name }) {
   }
 }
 
+// Alternate card animation directions for rhythm
+const variantForIndex = (i) => {
+  const m = i % 3;
+  if (m === 0) return fadeInUp;
+  if (m === 1) return fadeInLeft;
+  return fadeInRight;
+};
+
 export default function Hobbies({ items = DEFAULT_HOBBIES }) {
   return (
     <section className="hobbies" id="hobbies" aria-label="Hobbies">
       <div className="hobbies__fade" aria-hidden="true"></div>
 
-      <div className="hobbies__inner">
-        <header className="hobbies__header">
+      {/* Stagger header + grid when in view */}
+      <motion.div
+        className="hobbies__inner"
+        variants={staggerContainer(0.18)}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <motion.header className="hobbies__header" variants={fadeInUp}>
           <h2 className="hobbies__title">Hobbies</h2>
           <p className="hobbies__subtitle">
             A few things I do outside of code that shape how I think and build.
           </p>
-        </header>
+        </motion.header>
 
-        <ul className="hobbies__grid">
-          {items.map((h) => (
-            <li key={h.title} className="hobby">
-              <div className="hobby__icon" aria-hidden="true">
+        <motion.ul className="hobbies__grid" variants={staggerContainer(0.12)}>
+          {items.map((h, i) => (
+            <motion.li
+              key={h.title}
+              className="hobby"
+              variants={variantForIndex(i)}
+              whileHover={{ y: -2 }}
+              transition={{ type: "tween", duration: 0.2 }}
+            >
+              <motion.div
+                className="hobby__icon"
+                aria-hidden="true"
+                whileHover={{ scale: 1.06 }}
+                transition={{ type: "spring", stiffness: 240, damping: 18 }}
+              >
                 <Icon name={h.icon} />
-              </div>
+              </motion.div>
+
               <h3 className="hobby__title">{h.title}</h3>
               <p className="hobby__blurb">{h.blurb}</p>
-            </li>
+            </motion.li>
           ))}
-        </ul>
-      </div>
+        </motion.ul>
+      </motion.div>
 
       <div className="hobbies__glow" aria-hidden="true"></div>
     </section>
