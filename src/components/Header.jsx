@@ -3,28 +3,69 @@ import "../css/Header.css";
 
 export default function Header() {
   const [activeSection, setActiveSection] = useState("home");
+  const headerH = 65;
 
   useEffect(() => {
-    const sections = document.querySelectorAll("section[id]");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      {
-        threshold: 0.5, // 50% of section visible to trigger
-      }
-    );
+    const sections = Array.from(document.querySelectorAll("section[id]"));
+    if (!sections.length) return;
 
-    sections.forEach((section) => observer.observe(section));
+    let ticking = false;
+    let sectionTops = [];
+
+    const recalc = () => {
+      sectionTops = sections.map((el) => ({
+        id: el.id,
+        top: Math.floor(el.getBoundingClientRect().top + window.scrollY),
+        node: el,
+      }));
+      sectionTops.sort((a, b) => a.top - b.top);
+    };
+
+    const setFromScroll = () => {
+      const y = window.scrollY + headerH + 1;
+      let current = sectionTops[0]?.id || "home";
+      for (const s of sectionTops) {
+        if (s.top <= y) current = s.id;
+        else break;
+      }
+
+      const docBottom = Math.ceil(window.innerHeight + window.scrollY);
+      const atBottom = Math.abs(
+        docBottom - Math.ceil(document.documentElement.scrollHeight)
+      ) <= 2;
+      if (atBottom) current = sectionTops[sectionTops.length - 1]?.id || current;
+
+      if (current !== activeSection) setActiveSection(current);
+    };
+
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        setFromScroll();
+        ticking = false;
+      });
+    };
+
+    const onResize = () => {
+      recalc();
+      setFromScroll();
+    };
+
+    recalc();
+    setFromScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onResize);
+    window.setTimeout(() => {
+      recalc();
+      setFromScroll();
+    }, 300);
 
     return () => {
-      sections.forEach((section) => observer.unobserve(section));
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onResize);
     };
-  }, []);
+  }, [activeSection, headerH]);
 
   return (
     <header className="header">
