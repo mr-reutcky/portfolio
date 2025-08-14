@@ -118,7 +118,7 @@ function Icon({ name }) {
 
 const variantForIndex = (i) => {
   const m = i % 3;
-  if (m === 0) return fadeInUp;
+  if (m === 0) return fadeInRight;
   if (m === 1) return fadeInLeft;
   return fadeInRight;
 };
