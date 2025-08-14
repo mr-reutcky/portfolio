@@ -13,6 +13,7 @@
   position: relative;
   isolation: isolate;
   height: 100svh;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   padding: calc(var(--header-h) + clamp(2rem, 6vw, 4rem)) 1.5rem
