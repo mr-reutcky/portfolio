@@ -123,8 +123,6 @@ export default function Projects({ items = DEFAULT_PROJECTS }) {
     );
   }, [items, query]);
 
-  const cardVariantFor = (i) => (i % 3 === 0 ? fadeInUp : i % 3 === 1 ? fadeInLeft : fadeInRight);
-
   const sectionRef = useRef(null);
   const controls = useAnimation();
   const inView = useInView(sectionRef, {
