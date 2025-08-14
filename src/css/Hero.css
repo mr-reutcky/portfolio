@@ -12,7 +12,7 @@
 .hero {
   position: relative;
   isolation: isolate;
-  min-height: 100svh;
+  height: 100svh;
   display: flex;
   align-items: center;
   padding: calc(var(--header-h) + clamp(2rem, 6vw, 4rem)) 1.5rem
@@ -156,6 +156,7 @@
 }
 
 @media (max-width: 640px) {
+  .hero { height: 100svh; }
   .hero__actions { width: 100%; }
   .btn { flex: 1; min-width: 46%; }
 }
