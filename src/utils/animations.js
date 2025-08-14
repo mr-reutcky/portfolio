@@ -34,7 +34,7 @@ export const fadeInRight = {
   },
 };
 
-export const staggerContainer = (stagger = 0.20, delayChildren = 0) => ({
+export const staggerContainer = (stagger = 0.15, delayChildren = 0) => ({
   hidden: {},
   visible: {
     transition: {
