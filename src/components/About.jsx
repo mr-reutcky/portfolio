@@ -12,10 +12,7 @@ import {
 export default function About() {
   return (
     <section className="about" id="about" aria-label="About me">
-      {/* Top fade so it blends smoothly from the hero */}
       <div className="about__fade" aria-hidden="true"></div>
-
-      {/* Outer container: staggers intro + sidebar */}
       <motion.div
         className="about__inner"
         variants={staggerContainer(0.18)}
@@ -23,7 +20,6 @@ export default function About() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.35 }}
       >
-        {/* Intro column */}
         <motion.div className="about__intro" variants={staggerContainer(0.14)}>
           <motion.h2 className="about__title" variants={fadeInDown}>
             About
@@ -48,7 +44,6 @@ export default function About() {
           </motion.div>
         </motion.div>
 
-        {/* Sidebar column with its own stagger for cards */}
         <motion.aside
           className="about__sidebar"
           aria-label="Quick facts"

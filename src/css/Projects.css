@@ -9,7 +9,6 @@
   --header-h: 90px;
 }
 
-/* Section wrapper */
 .projects {
   position: relative;
   background:
@@ -22,7 +21,6 @@
   border-top: 1px solid rgba(255,255,255,0.06);
 }
 
-/* Smooth transition from section above */
 .projects__fade {
   position: absolute;
   top: -20px;
@@ -38,7 +36,6 @@
   );
 }
 
-/* Inner layout */
 .projects__inner {
   max-width: 1100px;
   margin: 0 auto;
@@ -62,7 +59,6 @@
   letter-spacing: 0.4px;
 }
 
-/* Search */
 .projects__controls { width: 100%; max-width: 360px; }
 .projects__search {
   width: 100%;
@@ -81,7 +77,6 @@
   box-shadow: 0 0 0 6px rgba(0, 255, 208, 0.08);
 }
 
-/* Grid */
 .projects__grid {
   list-style: none;
   margin: 1rem 0 0;
@@ -91,7 +86,6 @@
   gap: clamp(0.9rem, 2vw, 1.2rem);
 }
 
-/* Card */
 .project-card {
   display: flex;
   flex-direction: column;
@@ -110,7 +104,6 @@
   box-shadow: 0 12px 48px -24px rgba(0, 255, 208, 0.18);
 }
 
-/* Media */
 .project-card__media {
   aspect-ratio: 16 / 9;
   position: relative;
@@ -140,7 +133,6 @@
   filter: blur(10px);
 }
 
-/* Body */
 .project-card__body {
   padding: 1rem 1rem 1.1rem;
   display: grid;
@@ -159,7 +151,6 @@
   line-height: 1.6;
 }
 
-/* Chips (reuse style from About if present) */
 .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .chip {
   display: inline-flex;
@@ -173,7 +164,6 @@
   border: 1px solid rgba(255,255,255,0.10);
 }
 
-/* Actions */
 .project-card__actions {
   margin-top: 0.2rem;
   display: flex;
@@ -207,14 +197,12 @@
 }
 .btn--ghost:hover { border-color: rgba(255,255,255,0.28); transform: translateY(-1px); }
 
-/* Empty state */
 .projects__empty {
   color: var(--muted);
   text-align: center;
   margin: 2rem 0 0;
 }
 
-/* Section glow */
 .projects__glow {
   position: absolute;
   inset: 0;

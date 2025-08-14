@@ -18,9 +18,9 @@ export default function Hero() {
         initial="hidden"
         whileInView="visible"
         viewport={{
-          once: true,          // play only the first time it enters
-          amount: 0.6,         // ~60% of the hero must be visible
-          margin: "-65px 0px -10% 0px" // offset for your fixed header & a bit of bottom slack
+          once: true,
+          amount: 0.6,
+          margin: "-65px 0px -10% 0px"
         }}
       >
         <motion.p className="hero__eyebrow" variants={fadeInDown}>
@@ -48,7 +48,6 @@ export default function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* Glow easing in */}
       <motion.div
         className="hero__glow"
         aria-hidden="true"
@@ -57,7 +56,6 @@ export default function Hero() {
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
       />
 
-      {/* Scroll arrow with gentle float */}
       <motion.a
         href="#about"
         className="scroll-down"

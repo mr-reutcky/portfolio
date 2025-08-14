@@ -69,7 +69,6 @@ function Icon({ name }) {
     case "gamepad":
       return (
         <svg viewBox="0 0 24 24" aria-hidden="true">
-          {/* Controller body */}
           <path
             d="M6 8h12a4 4 0 0 1 4 4v2a4 4 0 0 1-4 4l-2-2H8l-2 2a4 4 0 0 1-4-4v-2a4 4 0 0 1 4-4z"
             fill="none"
@@ -78,7 +77,6 @@ function Icon({ name }) {
             strokeLinecap="round"
             strokeLinejoin="round"
           />
-          {/* D-pad */}
           <line
             x1="9"
             y1="12"
@@ -97,7 +95,6 @@ function Icon({ name }) {
             strokeWidth="1.5"
             strokeLinecap="round"
           />
-          {/* Action buttons */}
           <circle cx="15.5" cy="12" r="0.8" fill="currentColor" />
           <circle cx="17.5" cy="14" r="0.8" fill="currentColor" />
         </svg>
@@ -119,7 +116,6 @@ function Icon({ name }) {
   }
 }
 
-// Alternate card animation directions for rhythm
 const variantForIndex = (i) => {
   const m = i % 3;
   if (m === 0) return fadeInUp;
@@ -132,7 +128,6 @@ export default function Hobbies({ items = DEFAULT_HOBBIES }) {
     <section className="hobbies" id="hobbies" aria-label="Hobbies">
       <div className="hobbies__fade" aria-hidden="true"></div>
 
-      {/* Stagger header + grid when in view */}
       <motion.div
         className="hobbies__inner"
         variants={staggerContainer(0.18)}

@@ -19,7 +19,6 @@
   overflow: clip;
 }
 
-/* Smooth transition from previous section */
 .hobbies__fade {
   position: absolute;
   top: -20px;
@@ -61,7 +60,6 @@
   line-height: 1.6;
 }
 
-/* Grid */
 .hobbies__grid {
   list-style: none;
   margin: 1.2rem 0 0;
@@ -71,7 +69,6 @@
   gap: clamp(0.9rem, 2vw, 1.2rem);
 }
 
-/* Card */
 .hobby {
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(255,255,255,0.08);
@@ -89,7 +86,6 @@
   box-shadow: 0 12px 48px -24px rgba(0, 255, 208, 0.18);
 }
 
-/* Icon */
 .hobby__icon {
   width: 36px;
   height: 36px;
@@ -102,21 +98,18 @@
   height: 100%;
 }
 
-/* Title */
 .hobby__title {
   font-size: 1.05rem;
   margin: 0 0 0.4rem;
   color: #eef2ff;
 }
 
-/* Blurb */
 .hobby__blurb {
   color: var(--muted);
   font-size: 0.95rem;
   line-height: 1.5;
 }
 
-/* Section glow */
 .hobbies__glow {
   position: absolute;
   inset: 0;

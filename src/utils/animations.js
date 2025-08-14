@@ -1,8 +1,5 @@
-// Common fade-in variants for Framer Motion
-// Usage: import { fadeInUp, fadeInDown, fadeInLeft, fadeInRight } from "../utils/animations";
-
 export const fadeInUp = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
@@ -11,7 +8,7 @@ export const fadeInUp = {
 };
 
 export const fadeInDown = {
-  hidden: { opacity: 0, y: -20 },
+  hidden: { opacity: 0, y: -30 },
   visible: {
     opacity: 1,
     y: 0,
@@ -20,7 +17,7 @@ export const fadeInDown = {
 };
 
 export const fadeInLeft = {
-  hidden: { opacity: 0, x: -20 },
+  hidden: { opacity: 0, x: -30 },
   visible: {
     opacity: 1,
     x: 0,
@@ -29,7 +26,7 @@ export const fadeInLeft = {
 };
 
 export const fadeInRight = {
-  hidden: { opacity: 0, x: 20 },
+  hidden: { opacity: 0, x: 30 },
   visible: {
     opacity: 1,
     x: 0,
@@ -37,8 +34,7 @@ export const fadeInRight = {
   },
 };
 
-// Optional: container for staggering children
-export const staggerContainer = (stagger = 0.15, delayChildren = 0) => ({
+export const staggerContainer = (stagger = 0.20, delayChildren = 0) => ({
   hidden: {},
   visible: {
     transition: {
