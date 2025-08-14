@@ -116,13 +116,6 @@ function Icon({ name }) {
   }
 }
 
-const variantForIndex = (i) => {
-  const m = i % 3;
-  if (m === 0) return fadeInRight;
-  if (m === 1) return fadeInLeft;
-  return fadeInRight;
-};
-
 export default function Hobbies({ items = DEFAULT_HOBBIES }) {
   return (
     <section className="hobbies" id="hobbies" aria-label="Hobbies">
@@ -130,7 +123,7 @@ export default function Hobbies({ items = DEFAULT_HOBBIES }) {
 
       <motion.div
         className="hobbies__inner"
-        variants={staggerContainer(0.18)}
+        variants={index % 2 === 0 ? fadeInLeft : fadeInRight}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
