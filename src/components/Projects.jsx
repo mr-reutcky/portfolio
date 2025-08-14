@@ -168,7 +168,7 @@ export default function Projects({ items = DEFAULT_PROJECTS }) {
             <motion.li
               key={p.title + i}
               className="project-card"
-              variants={index % 2 === 0 ? fadeInLeft : fadeInRight}
+              variants={i % 2 === 0 ? fadeInLeft : fadeInRight}
               whileHover={{ y: -2 }}
               transition={{ type: "tween", duration: 0.2 }}
             >

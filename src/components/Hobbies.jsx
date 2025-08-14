@@ -123,7 +123,7 @@ export default function Hobbies({ items = DEFAULT_HOBBIES }) {
 
       <motion.div
         className="hobbies__inner"
-        variants={index % 2 === 0 ? fadeInLeft : fadeInRight}
+        variants={staggerContainer(0.18)}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
@@ -140,7 +140,7 @@ export default function Hobbies({ items = DEFAULT_HOBBIES }) {
             <motion.li
               key={h.title}
               className="hobby"
-              variants={variantForIndex(i)}
+              variants={i % 2 === 0 ? fadeInLeft : fadeInRight}
               whileHover={{ y: -2 }}
               transition={{ type: "tween", duration: 0.2 }}
             >
